@@ -1,0 +1,289 @@
+body {
+    background-color: #323b4d;
+}
+
+.logo{
+	margin-left: -10px;
+	margin-top: -10px;
+	width: 150px;
+	height: 150px;
+}
+
+.Panel-Sidebar{
+	width:250px;
+	height: 175px;
+	margin-top: -5px;
+	margin-left: 240px;
+	background-color: #404040;
+}
+
+.Panel-Sidebar-Heading{
+	width:250px;
+	height:35px;
+	background-color: #262626;
+}
+
+.Sidebar-Heading{
+	text-align:center;
+	padding-top:5px;
+	color: #ffffff;
+}
+
+.Calculators{
+	list-style-type: none;
+	color: #009933;
+	padding-left:75px;
+}
+
+.Button{
+	border: 1px;
+	width: 250px;
+	height:50px;
+	margin-left:-75px;
+	margin-top: -25px;
+	margin-bottom:15px;
+	font-size: 20px;
+	font-family: "montserrat";
+	cursor:pointer;
+	color: #189485;
+	transition: 0.5s;
+	background-color:#404040;
+	outline:none;
+}
+
+.Button:hover{
+	background-color:#333333;
+}
+
+.Main_Info_Panel{
+	width:650px;
+	padding-bottom:25px;
+	background-color: #404040;
+	margin-left:600px;
+	margin-top:-175px;
+}
+
+.Main_Info_Panel_Header{
+	width:650px;
+	height:50px;
+	background-color: #262626;
+}
+
+.SkillIcons{
+	margin-left:5px;
+	margin-top:5px;
+	width:45px;
+	height:45px;
+	opacity:0.2;
+}
+
+.HeaderText{
+	margin-top:-50px;
+	text-align:center;
+	color:#fff;
+}
+
+.Skill_Calculator_Intro{
+	color:#ffffff;
+	font-size:18px;
+	text-align:center;
+}
+
+.Calculator_Links{
+	width:225px;
+	height:350px;
+	margin-left:175px;
+	margin-top:35px;
+}
+
+.Calculator_LinksR2{
+	width:225px;
+	height:350px;
+	margin-left:350px;
+	margin-top:-350px;
+}
+
+.Skills{
+	width:35px;
+	height:35px;
+}
+
+a.Skill_Text_Link{
+	display:block;
+	color:#189485;
+	text-decoration:none;
+	margin-left:45px;
+	margin-top:-30px;
+	padding-bottom:20px;
+	font-size:20px;
+}
+
+input[type=number]{
+	margin-top:3px;
+	height:20px;
+	width:100px;
+	padding-top:3px;
+	padding-bottom:3px;
+	padding-left:5px;
+	background-color:#333333;
+	border: 2px solid #555;
+	color:#fff;
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+	margin:0;
+}
+
+input[type=number]:focus{
+	outline:none;
+}
+
+label{
+	color:#fff;
+}
+
+input#CurrentXP{
+	margin-left:11px;
+}
+
+.CurrentXPInfo{
+	margin-left:100px;
+	margin-top: 20px;
+}
+
+.TargetXPInfo{
+	margin-left:350px;	
+	margin-top:-66px;
+}
+
+input#TargetXP{
+	margin-left:11px;
+}
+
+.Xp-Wrap{
+	border-top:solid 1px #fff;
+	border-bottom: solid 1px #fff;
+	text-align:center;
+	margin-top: 10px;
+	margin-left:100px;
+	padding:3px 0px;
+	width:450px;
+	color:#fff;
+}
+
+table{
+	border-collapse:collapse;
+	border-right: 1px solid white;
+	width:85%;
+	margin-top:20px;
+	margin-left:50px;
+	color:#fff;
+}
+
+th{
+	border:solid 1px #fff;
+}
+
+td{
+	text-align:center;
+	padding: 10px 0px;
+	border-bottom:solid 1px #fff;
+}
+
+td.ActionName{
+	text-align:left;
+}
+
+.Positive{
+	background-color:#27ae61;
+}
+
+.Negative{
+	background-color:#f14d41;
+}
+
+.ActionImage{
+	width:25px;
+	height:25px;
+	vertical-align:middle;
+	padding-right:10px;
+}
+
+.Bonusses1{
+	width:200px;
+	height:150px;
+	margin-top:15px;
+	margin-left:125px;
+	color:#fff;
+}
+
+.Bonusses2{
+	width:200px;
+	height:150px;
+	margin-top:-125px;
+	margin-left:375px;
+	color:#fff;
+}
+
+/* Customize the label (the container) */
+.checkboxes {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-top:5px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxes:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxes input:checked ~ .checkmark {
+  background-color: #189485;
+}
+
+select{
+	background-color:#333333;
+	color:#189485;
+	height:25px;
+	border: #555;
+	padding-left:1px;
+	outline:0px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.ExtraInfo{
+	color:#fff;
+	margin-top:5px;
+	margin-left:5px;
+}

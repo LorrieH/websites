@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="javascript.js"></script>
+<head>
+    <title>Experience Calculator - Melvor</title>
+</head>
+<body>
+	<div class="Container">
+        <img src="Images/MelvorLogo.png" class="logo">
+		
+		<div class="Panel-Sidebar">
+			<div class="Panel-Sidebar-Heading">
+				<h2 class="Sidebar-Heading">Calculator</h2>
+			</div>
+			<ul class="Calculators">
+				<button class="Button" onclick="window.location.href='index.html';">Skill Calculators</button>
+				<button class="Button"><s>Combat Calculators</s></button>
+				<button class="Button"><s>Experience Table</s></button>
+			</ul>
+		</div>
+		
+		<div class="Main_Info_Panel">
+			<div class="Main_Info_Panel_Header">
+				<img src="Images/Skills/Cooking_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Fishing_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Crafting_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Farming_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Firemaking_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Fletching_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Herblore_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Mining_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Runecrafting_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Smithing_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Thieving_(skill).png" class="SkillIcons">
+				<img src="Images/Skills/Woodcutting_(skill).png" class="SkillIcons">
+				<h1 class="HeaderText">Woodcutting Calculator</h1>
+			</div>
+			
+				<div class="CurrentXPInfo">
+					<label for="CurrentLevel">Current level</label>
+					<input type="number" id="CurrentLevel" name="CurrentLevel"  value="1" oninput="OnInputChange(this.id)"></input><br>
+					<label for="CurrentXP">Current XP</label>
+					<input type="number" id="CurrentXP" name="CurrentXP" value="0" oninput="OnInputChange(this.id)"></input>
+				</div>
+				
+				<div class="TargetXPInfo">
+					<label for="TargetLevel">Target level</label>
+					<input type="number" id="TargetLevel" name="TargetLevel"  value="2" oninput="OnInputChange(this.id)"></input><br>
+					<label for="TargetXP">Target XP</label>
+					<input type="number" id="TargetXP" name="TargetXP" value="83" oninput="OnInputChange(this.id)"></input>
+				</div>
+				
+				<div class="Xp-Wrap" id="RemainingXP">Experience Till Target: 83</div>
+				
+				<div class="Bonusses1">
+					<h2>Bonusses</h2>
+					<label class="checkboxes">Increased Log Values
+						<input type="checkbox" onclick="AddProfitBonus(50, this.checked)">
+						<span class="checkmark"></span>
+					</label>
+					<label class="checkboxes">Skillcape
+						<input type="checkbox" onclick="DecreaseTime(50, this.checked)">
+						<span class="checkmark"></span>
+					</label>
+					<label class="checkboxes">Master of Nature
+						<input type="checkbox" onclick="DecreaseTime(20, this.checked)">
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				
+				<div class="Bonusses2">
+					<h2></h2>
+					<select id="ToolSelect" onchange="ChangeTool(this.value, 'Speed')">
+						<option value="0">Bronze Axe</option>
+						<option value="5">Iron Axe</option>
+						<option value="15">Steel Axe</option>
+						<option value="20">Black Axe</option>
+						<option value="30">Mithril Axe</option>
+						<option value="35">Adamant Axe</option>
+						<option value="40">Rune Axe</option>
+						<option value="50">Dragon Axe</option>
+					</select>
+				</div>
+				
+				<table class="XpTable" id="XpTable">
+					<thead>
+						<tr>
+							<th>Level</th>
+							<th colspan="2">Action/Product</th>
+							<th>Exp</th>
+							<th>Amount</th>
+							<th>Profit</th>
+							<th>Time(s)</th>
+							<th>Time(m)</th>
+							<th>Time(h)</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr> 
+							<td class="LevelRequirement Positive"> 1 </td>
+							<td> <img src="Images/Items/Woodcutting/Normal_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Normal Logs</span></td>
+							<td class="ExpGain"> 10 </td>
+							<td class="RequiredAmount"> 9 </td>
+							<td class="Profit Positive" id="9"> 9 </td>
+							<td class="TimeS" id="3">3</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 10 </td>
+							<td> <img src="Images/Items/Woodcutting/Oak_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Oak Logs</span></td>
+							<td class="ExpGain"> 15 </td>
+							<td class="RequiredAmount"> 6 </td>
+							<td class="Profit Positive" id="30"> 30 </td>
+							<td class="TimeS" id="4">4</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 25 </td>
+							<td> <img src="Images/Items/Woodcutting/Willow_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Willow Logs</span></td>
+							<td class="ExpGain"> 22 </td>
+							<td class="RequiredAmount"> 4 </td>
+							<td class="Profit Positive" id="40"> 40 </td>
+							<td class="TimeS" id="5">5</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 35 </td>
+							<td> <img src="Images/Items/Woodcutting/Teak_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Teak Logs</span></td>
+							<td class="ExpGain"> 30 </td>
+							<td class="RequiredAmount"> 3 </td>
+							<td class="Profit Positive" id="60"> 60 </td>
+							<td class="TimeS" id="6">6</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 45 </td>
+							<td> <img src="Images/Items/Woodcutting/Maple_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Maple Logs</span></td>
+							<td class="ExpGain"> 40 </td>
+							<td class="RequiredAmount"> 3 </td>
+							<td class="Profit Positive" id="105"> 105 </td>
+							<td class="TimeS" id="8">8</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 55 </td>
+							<td> <img src="Images/Items/Woodcutting/Mahogany_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Mahogany Logs</span></td>
+							<td class="ExpGain"> 60 </td>
+							<td class="RequiredAmount"> 2 </td>
+							<td class="Profit Positive" id="100"> 100 </td>
+							<td class="TimeS" id="10">10</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 60 </td>
+							<td> <img src="Images/Items/Woodcutting/Yew_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Yew Logs</span></td>
+							<td class="ExpGain"> 80 </td>
+							<td class="RequiredAmount"> 2 </td>
+							<td class="Profit Positive" id="150"> 150 </td>
+							<td class="TimeS" id="12">12</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 75 </td>
+							<td> <img src="Images/Items/Woodcutting/Magic_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Magic Logs</span></td>
+							<td class="ExpGain"> 100 </td>
+							<td class="RequiredAmount"> 1 </td>
+							<td class="Profit Positive" id="300"> 300 </td>
+							<td class="TimeS" id="20">20</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+						<tr> 
+							<td class="LevelRequirement Negative"> 90 </td>
+							<td> <img src="Images/Items/Woodcutting/Redwood_Logs_(item).png" class="ActionImage"></img> </td>
+							<td class="ActionName"><span>Redwood Logs</span></td>
+							<td class="ExpGain"> 180 </td>
+							<td class="RequiredAmount"> 1 </td>
+							<td class="Profit Positive" id="25"> 25 </td>
+							<td class="TimeS" id="15">15</td>
+							<td class="TimeM">X</td>
+							<td class="TimeM">X</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+	
+</body>
+</html>
